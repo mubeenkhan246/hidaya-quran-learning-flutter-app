@@ -8,7 +8,7 @@
 
 <center>Download Hidaya - Quran Learning App Now</center> <br>
 [Apple AppStore](https://apps.apple.com/pk/app/hidayah-quran-learning-app/id6755522997) <br>
-[APK File](https://drive.google.com/drive/folders/1Evx71ay8_wjojFTTmhxfvTy4lOLEdQpZ)
+[Download APK File](https://drive.google.com/drive/folders/1Evx71ay8_wjojFTTmhxfvTy4lOLEdQpZ)
 </div>
 
 # Hidayah - Comprehensive Islamic Learning Application 📖🕌
