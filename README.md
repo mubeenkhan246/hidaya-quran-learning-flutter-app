@@ -1,3 +1,13 @@
+<div align="center">
+
+**بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ**
+
+*"Read! In the Name of your Lord, Who created"* - **Surah Al-Alaq (96:1)**
+
+**May this app be beneficial in your journey of learning and understanding the Quran and Islamic teachings. 🌙**
+
+</div>
+
 # Hidayah - Comprehensive Islamic Learning Application 📖🕌
 
 <div align="center">
@@ -10,7 +20,7 @@
 
 </div>
 
-A feature-rich, cross-platform Islamic learning application built with Flutter, featuring a premium **iOS 26 Liquid Glass UI** design. Hidayah provides an all-in-one platform for Quran reading, Hadith study, prayer times, Islamic education, and spiritual growth tools.
+A feature-rich, cross-platform Islamic learning application built with Flutter, featuring a premium **Liquid Glass UI** design. Hidayah provides an all-in-one platform for Quran reading with audio recitation, prayer times, Islamic stories, kids' learning modules, and spiritual growth tools.
 
 ---
 
@@ -37,11 +47,11 @@ A feature-rich, cross-platform Islamic learning application built with Flutter, 
 
 🕋 **Complete Islamic Companion** - Everything you need for Islamic learning in one beautiful app  
 📖 **Full Quran** - All 114 Surahs with audio recitation by multiple Qaris  
-📚 **Authentic Hadith** - Comprehensive collections from renowned scholars  
+📚 **Islamic Stories** - Inspiring narratives from Islamic history  
 🕌 **Prayer Times** - GPS-based accurate Salah timings with notifications  
 🧭 **Qibla Finder** - Real-time compass for precise direction to Mecca  
-🎨 **Premium UI** - Stunning iOS 26 Liquid Glass design with smooth animations  
-🌍 **Multilingual** - Full support for English, Arabic, Urdu, and Bahasa Indonesia  
+🎨 **Premium UI** - Stunning Liquid Glass design with smooth animations  
+👶 **Kids Learning** - Interactive Islamic education modules for children  
 🆓 **100% Free** - No ads, no paywalls, all features available to everyone  
 
 ---
@@ -53,12 +63,12 @@ A feature-rich, cross-platform Islamic learning application built with Flutter, 
 **Main Features Preview:**
 - Home Dashboard with Prayer Times
 - Quran Reading with Audio Player
-- Hadith Collections Browser
+- Islamic Stories Collection
 - Qibla Finder with Real-time Compass
-- Tajweed Lessons Interface
-- Profile & Statistics Dashboard
+- 99 Names of Allah
 - Kids Learning Modules
 - Dua Collections & Tasbih Counter
+- Memorization Tracker
 
 ---
 
@@ -67,52 +77,51 @@ A feature-rich, cross-platform Islamic learning application built with Flutter, 
 ### 📖 Quran Features
 
 - **Complete Quran Access** - Browse all 114 Surahs with Arabic text using the `quran: ^1.4.1` package
-- **Multi-Reciter Audio Player** - Listen to renowned Qaris with adjustable playback speed (0.5x to 2.0x)
-- **Multilingual Translations** - Translations in English, Urdu, Bahasa Indonesia, and Arabic
-- **Memorization Tools** - Track memorization progress with proficiency ratings and spaced repetition
-- **Bookmarking & Progress** - Save verses, track reading progress, and resume where you left off
-- **Manzil Recitation** - Access specific Surahs traditionally recited for protection
-- **Quran Flashes** - Quick verse insights and daily reminders
-- **Full Surah Player** - Continuous playback of complete Surahs
+- **Multi-Reciter Audio Player** - Listen to renowned Qaris with adjustable playback speed and repeat options
+- **Multilingual Translations** - View translations in English, Urdu, and Bahasa Indonesia
+- **Verse of the Day** - Daily featured verses with audio playback
+- **Memorization Tracker** - Track and manage your Quran memorization progress
+- **Manzil Recitation** - Access protective verses organized by traditional groupings
+- **Quran Flashes** - Quick daily verse insights and reminders
+- **Full Surah Player** - Continuous playback of complete Surahs with navigation
+- **Search Functionality** - Find Surahs quickly by name or number
 
 ### 🎓 Learning & Education
-
-- **Tajweed Mastery Lessons** - Interactive lessons covering essential Tajweed rules with detailed explanations
-- **Hadith Collections** - Comprehensive Hadith database with multiple scholars and books using `dorar_hadith: ^0.2.0`
-- **Islamic Books** - Access to Islamic literature and educational resources by chapter
-- **Kids Learning Modules** - Child-friendly Islamic education content with interactive lessons
-- **Islamic Stories** - Inspiring stories from Islamic history and prophetic traditions
-- **99 Names of Allah** - Learn and explore the beautiful names and attributes of Allah
+- **Islamic Stories** - Inspiring narratives from Islamic history and traditions
+- **99 Names of Allah** - Learn and explore the beautiful names and attributes of Allah with meanings
 
 ### 🕌 Prayer & Worship Tools
 
-- **Prayer Times** - Accurate Salah timings based on your location using `adhan: ^2.0.0`
+- **Prayer Times Calendar** - Accurate Salah timings based on GPS location using `adhan: ^2.0.0`
+- **Hijri Calendar** - Islamic date display with Gregorian conversion using `hijri: ^3.0.0`
+- **Prayer Notifications** - Optional reminders for each prayer time
 - **Qibla Finder** - Real-time compass pointing to the Kaaba using `flutter_compass: ^0.8.0`
-- **Digital Tasbih** - Electronic counter for Dhikr and remembrance
-- **Dua Collections** - Comprehensive collection of daily prayers and supplications
-- **Hijri Calendar** - Islamic calendar integration using `hijri: ^3.0.0`
-- **Zakat Calculator** - Calculate Zakat obligations with precision
+- **Digital Tasbih** - Electronic counter for Dhikr with customizable counts and colors
+- **Dua Collections** - Comprehensive collection of daily prayers, morning/evening Azkar, and supplications
+- **Zakat Calculator** - Calculate Zakat obligations for wealth, gold, silver, and savings
 
-### 🏆 Tracking & Achievements
+### ⚙️ Customization & Settings
 
-- **Daily Goals & Streaks** - Set study goals and maintain learning streaks
-- **Achievement System** - Unlock badges and achievements as you progress
-- **Progress Analytics** - Detailed statistics on reading, memorization, and learning
-- **Prayer Notifications** - Smart reminders for Salah times using `flutter_local_notifications: ^17.2.3`
+- **Theme Modes** - Switch between light and dark modes
+- **Glass Style Options** - Choose between Clear or Tinted glass effects
+- **Accent Colors** - Select from multiple color themes (Gold, Teal, Blue, Purple, Pink, Green)
+- **Font Size Adjustment** - Customize text size for comfortable reading
+- **Prayer Notifications** - Configure reminders for Salah times using `flutter_local_notifications: ^17.2.3`
+- **Multi-language Interface** - Interface support for English, Arabic, Urdu, and Bahasa Indonesia
 
-### UI/UX Features
+### 🎨 UI/UX Features
 
-- **🎨 iOS 26 Liquid Glass UI** - Premium translucent, blurred glass aesthetic
-- **🌓 Glass Style Options** - Choose between Clear or Tinted glass themes
-- **📱 Responsive Design** - Beautiful layouts optimized for all screen sizes
-- **✨ Smooth Animations** - Fluid transitions and interactive elements
-- **🎯 Intuitive Navigation** - Easy-to-use bottom navigation with 4 main sections
+- **Liquid Glass UI** - Premium translucent, frosted glass aesthetic
+- **Glass Style Options** - Choose between Clear or Tinted glass themes
+- **Responsive Design** - Beautiful layouts optimized for all screen sizes
+- **Smooth Animations** - Fluid transitions with staggered effects
+- **Intuitive Navigation** - Easy-to-use bottom navigation with 6 main sections
+- **Shimmer Loading** - Elegant loading placeholders for better UX
 
 ## 📦 Packages Used
 
 ### Core Islamic Content
 - **`quran: ^1.4.1`** - Source for all Arabic text, Surah names, and verse data
-- **`dorar_hadith: ^0.2.0`** - Comprehensive Hadith collections and Islamic texts
 - **`adhan: ^2.0.0`** - Accurate prayer time calculations
 - **`hijri: ^3.0.0`** - Hijri calendar conversion and Islamic dates
 
@@ -149,8 +158,8 @@ A feature-rich, cross-platform Islamic learning application built with Flutter, 
 - **`timezone: ^0.9.2`** - Timezone support for notifications
 - **`flutter_native_timezone: ^2.0.0`** - Native device timezone
 
-### Monetization
-- **`in_app_purchase: ^3.1.13`** - Donation feature (simulated IAP)
+### Support
+- **`in_app_purchase: ^3.1.13`** - Voluntary donation feature
 
 ### Development Tools
 - **`hive_generator: ^2.0.1`** - Code generation for Hive models
@@ -228,11 +237,11 @@ lib/
 ├── constants/          # App-wide constants and themes
 │   ├── app_constants.dart
 │   ├── app_theme.dart
-│   └── colors.dart
+│   ├── dua_constants.dart
+│   └── story_data.dart
 ├── models/            # Data models (Hive)
 │   ├── user_progress.dart
-│   ├── user_progress.g.dart (generated)
-│   └── bookmarks.dart
+│   └── user_progress.g.dart (generated)
 ├── providers/         # State management (Provider)
 │   └── app_provider.dart
 ├── screens/           # All app screens
@@ -244,16 +253,16 @@ lib/
 │   ├── full_surah_player_screen.dart
 │   ├── manzil_screen.dart
 │   ├── quran_flashes_screen.dart
-│   ├── tajweed_lessons_screen.dart
-│   ├── tajweed_lesson_detail_screen.dart
 │   ├── memorization_screen.dart
-│   ├── hadith_books_screen.dart
-│   ├── hadith_collection_screen.dart
-│   ├── hadith_scholars_screen.dart
-│   ├── book_chapters_screen.dart
 │   ├── islamic_stories_screen.dart
 │   ├── kids_learning_screen.dart
-│   ├── kids_modules/     # Children's learning modules
+│   ├── kids_modules/           # Children's learning modules
+│   │   ├── juz_amma_screen.dart
+│   │   ├── noorani_qaida_screen.dart
+│   │   ├── writing_practice_screen.dart
+│   │   ├── stories_screen.dart
+│   │   ├── games_quizzes_screen.dart
+│   │   └── rewards_screen.dart
 │   ├── names_of_allah_screen.dart
 │   ├── dua_screen.dart
 │   ├── tasbih_screen.dart
@@ -265,73 +274,93 @@ lib/
 │   └── support_app_screen.dart
 ├── widgets/           # Reusable UI components
 │   ├── glass_card.dart
-│   ├── custom_app_bar.dart
-│   ├── prayer_time_card.dart
-│   └── loading_shimmer.dart
+│   ├── prayer_calendar_widget.dart
+│   ├── quick_actions_widget.dart
+│   ├── quran_flashes_widget.dart
+│   └── test_voice_dialog.dart
 ├── services/          # Business logic and external services
 │   └── notification_service.dart
 ├── utils/             # Helper functions and utilities
+│   ├── responsive_helper.dart
+│   └── translation_helper.dart
 └── main.dart          # App entry point
 ```
 
 ## 🎨 Liquid Glass UI Design
 
-The app features a premium **iOS 26 Liquid Glass aesthetic** with:
+The app features a premium **Liquid Glass aesthetic** with:
 
 - **Translucent Cards** - Frosted glass effect using `BackdropFilter`
-- **Rounded Elements** - Deeply rounded corners (24px radius)
+- **Rounded Elements** - Deeply rounded corners for modern look
 - **Gradient Backgrounds** - Rich, immersive color gradients
-- **Subtle Animations** - Smooth scale and fade transitions
+- **Smooth Animations** - Elegant scale and fade transitions
 - **Glass Styles** - User-selectable Clear or Tinted glass effects
+- **Multiple Color Themes** - Choose from 6 accent color options
 
-### Color Palette
+### Default Color Palette
 
-- **Primary Gold**: `#D4AF37` - Accent and highlights
+- **Primary Gold**: `#D4AF37` - Default accent color
 - **Dark Background**: `#0A0E27` to `#16213E` gradient
-- **Text Light**: `#F5F5F5` - Primary text
-- **Glass Effects**: Semi-transparent overlays with blur
+- **Light Background**: Soft gradients for light mode
+- **Text**: Adaptive colors for optimal readability
+- **Glass Effects**: Semi-transparent overlays with backdrop blur
 
 ## 📚 Main Sections
 
-### 1. 📖 Quran & Recitation
-- **Quran Reading**: Browse all 114 Surahs with Arabic text and translations
-- **Audio Player**: Multi-reciter support with speed control and repeat options
-- **Full Surah Player**: Continuous playback of complete Surahs
-- **Manzil**: Access protective verses organized by traditional groupings
-- **Quran Flashes**: Quick daily verse insights and reminders
-- **Memorization**: Track progress with proficiency ratings and review schedules
-- **Bookmarks**: Save verses and resume reading from where you left off
+### 1. 🏠 Home (Quran Reading)
+- **All Surahs**: Browse all 114 Surahs with names in multiple languages
+- **Surah Details**: View verses with Arabic text and translations
+- **Verse of the Day**: Daily featured verses with audio playback
+- **Featured Surahs**: Quick access to the 4 Quls (protective Surahs)
+- **Prayer Times Widget**: Live prayer times with Hijri calendar
+- **Quick Actions**: Fast navigation to popular features
+- **Quran Flashes**: Daily verse insights carousel
 
-### 2. 📚 Hadith & Islamic Knowledge
-- **Hadith Collections**: Browse authentic Hadiths from multiple scholars
-- **Hadith Books**: Access organized Hadith books by category
-- **Islamic Books**: Read classical and contemporary Islamic literature
-- **Islamic Stories**: Inspiring narratives from Islamic history
-- **99 Names of Allah**: Learn the beautiful names and attributes of Allah
-- **Kids Learning**: Child-friendly modules with interactive Islamic education
+### 2. 📖 Manzil (Protected Verses)
+- **Traditional Groupings**: Seven Manzils for daily recitation
+- **Arabic Text**: Complete verses in Arabic
+- **Translations**: English translations for understanding
+- **Protection Verses**: Verses traditionally recited for spiritual protection
 
-### 3. 🕌 Prayer & Worship
-- **Prayer Times**: Accurate Salah timings based on GPS location
-- **Qibla Finder**: Real-time compass pointing to Mecca
-- **Digital Tasbih**: Electronic counter for Dhikr and Tasbeeh
-- **Dua Collections**: Comprehensive supplications for daily life
-- **Hijri Calendar**: Islamic calendar with important dates
-- **Zakat Calculator**: Calculate your Zakat obligations accurately
+### 3. 🤲 Dua & Azkar
+- **Morning Azkar**: Prayers and supplications for the morning
+- **Evening Azkar**: Prayers and supplications for the evening
+- **Daily Duas**: Comprehensive collection of daily supplications
+- **Categorized Duas**: Organized by occasions and needs
+- **Arabic with Translation**: Arabic text with English meanings
 
-### 4. 🎓 Learning & Education
-- **Tajweed Lessons**: Comprehensive Tajweed rules with examples
-- **Tajweed Practice**: Interactive exercises for pronunciation mastery
-- **Progress Tracking**: Monitor your learning journey with detailed analytics
-- **Achievement System**: Earn badges and unlock milestones
+### 4. 📚 Islamic Stories
+- **Prophetic Stories**: Narratives from the lives of Prophets
+- **Companions Stories**: Inspiring accounts from the Sahabah
+- **Historical Events**: Important events in Islamic history
+- **Moral Lessons**: Stories with valuable life lessons
+- **Full Descriptions**: Detailed narratives with key takeaways
 
-### 5. 👤 Profile & Settings
-- **Study Statistics**: View reading hours, streaks, and progress
-- **Achievement Badges**: Unlock rewards as you learn
-- **Daily Goals**: Set and track personal study targets
-- **Language Preferences**: Choose from 4 interface languages
-- **Glass Style Themes**: Customize the UI appearance
-- **Notification Settings**: Configure prayer time reminders
-- **Support the App**: Voluntary donation options
+### 5. 🧠 Memorization
+- **Track Progress**: Monitor your Quran memorization journey
+- **Add Verses**: Select Surahs and verses to memorize
+- **Progress Status**: Mark verses as learning, reviewing, or mastered
+- **Notes**: Add personal notes for each memorization entry
+- **Visual Tracking**: Progress indicators and statistics
+
+### 6. ⚙️ Settings & Features
+- **Prayer Times**: Live Salah timings with location-based calculation
+- **Qibla Compass**: Find the direction to Mecca anywhere
+- **99 Names of Allah**: Beautiful names with meanings and descriptions
+- **Digital Tasbih**: Customizable Dhikr counter
+- **Zakat Calculator**: Calculate your Zakat obligations
+- **Kids Learning**: Interactive modules for children including:
+  - Juz Amma learning
+  - Noorani Qaida basics
+  - Arabic writing practice
+  - Islamic stories for kids
+  - Educational games and quizzes
+  - Achievement rewards
+- **Theme Customization**: Dark/Light mode, glass styles, accent colors
+- **Font Size**: Adjust text size for comfort
+- **Prayer Notifications**: Configure prayer time reminders
+- **Share App**: Share with friends and family
+- **Support**: Voluntary donation options
 
 ## 🔧 Development Notes
 
@@ -527,12 +556,4 @@ For issues, questions, or suggestions:
 
 ---
 
-<div align="center">
 
-**بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ**
-
-*"Read! In the Name of your Lord, Who created"* - **Surah Al-Alaq (96:1)**
-
-**May this app be beneficial in your journey of learning and understanding the Quran and Islamic teachings. 🌙**
-
-</div>
