@@ -22,7 +22,6 @@
 
 A feature-rich, cross-platform Islamic learning application built with Flutter, featuring a premium **Liquid Glass UI** design. Hidayah provides an all-in-one platform for Quran reading with audio recitation, prayer times, Islamic stories, kids' learning modules, and spiritual growth tools.
 
-
 <table>
   <tr>
     <td><img src="screenshots/1.png"></td>
