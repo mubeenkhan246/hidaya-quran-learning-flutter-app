@@ -8,6 +8,7 @@ import 'manzil_screen.dart';
 import 'islamic_stories_screen.dart';
 import 'memorization_screen.dart';
 import 'settings_screen.dart';
+import 'hadith_collections_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,9 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
     _screens = [
       RepaintBoundary(child: QuranReadingScreen(key: _quranKey)),
       const RepaintBoundary(child: ManzilScreen()),
-      // const HadithScholarsScreen(),
+      // const RepaintBoundary(child: HadithCollectionsScreen()),
       const RepaintBoundary(child: DuaScreen()),
-      // const TasbihScreen(),
       const RepaintBoundary(child: IslamicStoriesScreen()),
       const RepaintBoundary(child: MemorizationScreen()),
       RepaintBoundary(child: SettingsScreen()),

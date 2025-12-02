@@ -204,6 +204,7 @@ class AppConstants {
   // Storage Keys
   static const String keyFirstLaunch = 'first_launch';
   static const String keySelectedLanguage = 'selected_language';
+  static const String keyHadithLanguage = 'hadith_language';
   static const String keyDailyGoal = 'daily_goal';
   static const String keyCurrentStreak = 'current_streak';
   static const String keyTotalStudyTime = 'total_study_time';
@@ -217,4 +218,5 @@ class AppConstants {
   static const String keyArabicTextSize = 'arabic_text_size'; // Text size for Arabic
   static const String keyBaseFontSize = 'base_font_size'; // Base font size for entire app (16-30px)
   static const String keyTranslationFontSize = 'translation_font_size'; // Translation/English text size (12-24px)
+  static const String keyQuranDisplayMode = 'quran_display_mode';
 }

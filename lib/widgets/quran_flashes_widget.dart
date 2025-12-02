@@ -230,14 +230,14 @@ class QuranFlashesWidget extends StatelessWidget {
       child: GlassCard(
         child: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                themeColor.withOpacity(isDark ? 0.15 : 0.12),
-                themeColor.withOpacity(isDark ? 0.05 : 0.03),
-              ],
-            ),
+            // gradient: LinearGradient(
+            //   begin: Alignment.topLeft,
+            //   end: Alignment.bottomRight,
+            //   colors: [
+            //     themeColor.withOpacity(isDark ? 0.15 : 0.12),
+            //     themeColor.withOpacity(isDark ? 0.05 : 0.03),
+            //   ],
+            // ),
             borderRadius: BorderRadius.circular(24),
           ),
           child: Padding(
@@ -308,36 +308,36 @@ class QuranFlashesWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 // Arabic verse (RTL)
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: Text(
-                      verseText,
-                      style: AppTheme.arabicTextStyle(
-                        fontSize: responsive.arabicBodySize * 0.9,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? AppTheme.textLight : AppTheme.textDark,
-                        height: 1.9,
-                      ),
-                      textAlign: TextAlign.right,
-                      textDirection: TextDirection.rtl,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                // Divider
-                Container(
-                  height: 1,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.transparent,
-                        themeColor.withOpacity(0.3),
-                        Colors.transparent,
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
+                // Flexible(
+                //   child: SingleChildScrollView(
+                //     child: Text(
+                //       verseText,
+                //       style: AppTheme.arabicTextStyle(
+                //         fontSize: responsive.arabicBodySize * 0.9,
+                //         fontWeight: FontWeight.w600,
+                //         color: isDark ? AppTheme.textLight : AppTheme.textDark,
+                //         height: 1.9,
+                //       ),
+                //       textAlign: TextAlign.right,
+                //       textDirection: TextDirection.rtl,
+                //     ),
+                //   ),
+                // ),
+                // const SizedBox(height: 10),
+                // // Divider
+                // Container(
+                //   height: 1,
+                //   decoration: BoxDecoration(
+                //     gradient: LinearGradient(
+                //       colors: [
+                //         Colors.transparent,
+                //         themeColor.withOpacity(0.3),
+                //         Colors.transparent,
+                //       ],
+                //     ),
+                //   ),
+                // ),
+                // const SizedBox(height: 10),
                 // Translation (RTL or LTR based on language)
                 Text(
                   translation,

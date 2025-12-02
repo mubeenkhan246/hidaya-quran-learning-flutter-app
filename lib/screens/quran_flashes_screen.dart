@@ -235,6 +235,7 @@ class QuranFlashesScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         appBar: showBackButton
             ? AppBar(
+              scrolledUnderElevation: 0,
                 backgroundColor: Colors.transparent,
                 elevation: 0,
                 leading: IconButton(
@@ -461,32 +462,32 @@ class QuranFlashesScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 // Arabic verse (RTL)
-                Text(
-                  verseText,
-                  style: AppTheme.arabicTextStyle(
-                    fontSize: responsive.arabicBodySize * 0.9,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? AppTheme.textLight : AppTheme.textDark,
-                    height: 1.9,
-                  ),
-                  textAlign: TextAlign.right,
-                  textDirection: TextDirection.rtl,
-                ),
-                const SizedBox(height: 10),
-                // Divider
-                Container(
-                  height: 1,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.transparent,
-                        themeColor.withOpacity(0.3),
-                        Colors.transparent,
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
+                // Text(
+                //   verseText,
+                //   style: AppTheme.arabicTextStyle(
+                //     fontSize: responsive.arabicBodySize * 0.9,
+                //     fontWeight: FontWeight.w600,
+                //     color: isDark ? AppTheme.textLight : AppTheme.textDark,
+                //     height: 1.9,
+                //   ),
+                //   textAlign: TextAlign.right,
+                //   textDirection: TextDirection.rtl,
+                // ),
+                // const SizedBox(height: 10),
+                // // Divider
+                // Container(
+                //   height: 1,
+                //   decoration: BoxDecoration(
+                //     gradient: LinearGradient(
+                //       colors: [
+                //         Colors.transparent,
+                //         themeColor.withOpacity(0.3),
+                //         Colors.transparent,
+                //       ],
+                //     ),
+                //   ),
+                // ),
+                // const SizedBox(height: 10),
                 // Translation (RTL or LTR based on language)
                 Text(
                   translation,

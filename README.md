@@ -6,8 +6,9 @@
 
 **May this app be beneficial in your journey of learning and understanding the Quran and Islamic teachings. 🌙**
 
-<center>Download Hidaya - Quran Learning App Now</center>
-[Apple AppStore](https://apps.apple.com/pk/app/hidayah-quran-learning-app/id6755522997) 
+<center><b>**Download Hidaya - Quran Learning App Now**</b></center> <br>
+[Apple AppStore](https://apps.apple.com/pk/app/hidayah-quran-learning-app/id6755522997) <br>
+[Download APK File](https://drive.google.com/drive/folders/1Evx71ay8_wjojFTTmhxfvTy4lOLEdQpZ)
 </div>
 
 # Hidayah - Comprehensive Islamic Learning Application 📖🕌

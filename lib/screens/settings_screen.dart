@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -859,111 +861,111 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   'Support & About',
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
-//                 SizedBox(height: 16),
+                if(Platform.isIOS) SizedBox(height: 16),
                 
-//                 GlassCard(
+               if(Platform.isIOS) GlassCard(
                   
-//                   child: Column(
-//                     children: [
-//                       InkWell(
-//                         onTap: () {
-//                         Navigator.push(
-//                           context,
-//                           MaterialPageRoute(
-//                             builder: (context) => DonationScreen(),
-//                           ),
-//                         );
-//                       },
-//                         child: Row(
-//                           children: [
-//                             Icon(
-//                               Icons.favorite_rounded,
-//                               color: const Color(0xFFFF6B6B),
-//                             ),
-//                             SizedBox(width: 16),
-//                             Expanded(
-//                               child: Column(
-//                                 crossAxisAlignment: CrossAxisAlignment.start,
-//                                 children: [
-//                                   Text(
-//                                     'Support the App',
-//                                     style: Theme.of(context).textTheme.titleMedium,
-//                                   ),
-//                                   Text(
-//                                     'Help us continue developing',
-//                                     style: Theme.of(context).textTheme.bodySmall,
-//                                   ),
-//                                 ],
-//                               ),
-//                             ),
-//                             Icon(
-//                               Icons.arrow_forward_ios_rounded,
-//                               color: appProvider.accentColor,
-//                               size: 20,
-//                             ),
-//                           ],
-//                         ),
-//                       ),
+                  child: Column(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DonationScreen(),
+                          ),
+                        );
+                      },
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.favorite_rounded,
+                              color: const Color(0xFFFF6B6B),
+                            ),
+                            SizedBox(width: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Support the App',
+                                    style: Theme.of(context).textTheme.titleMedium,
+                                  ),
+                                  Text(
+                                    'Help us continue developing',
+                                    style: Theme.of(context).textTheme.bodySmall,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: appProvider.accentColor,
+                              size: 20,
+                            ),
+                          ],
+                        ),
+                      ),
                       
-//                       // Restore Purchases Button
-//                       if (!_isRestored) ...[
-//                         const SizedBox(height: 16),
-//                         Divider(height: 1, color: appProvider.accentColor),
-//                         const SizedBox(height: 16),
-//                         InkWell(
-//                           onTap: _isRestoring ? null : _restorePurchases,
-//                           child: Row(
-//                             children: [
-//                               Icon(
-//                                 Icons.restore_rounded,
-//                                 color: _isRestoring 
-//                                     ? Colors.grey 
-//                                     : appProvider.accentColor,
-//                               ),
-//                               const SizedBox(width: 16),
-//                               Expanded(
-//                                 child: Column(
-//                                   crossAxisAlignment: CrossAxisAlignment.start,
-//                                   children: [
-//                                     Text(
-//                                       'Restore Purchases',
-//                                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-//                                         color: _isRestoring ? Colors.grey : null,
-//                                       ),
-//                                     ),
-//                                     Text(
-//                                       _isRestoring 
-//                                           ? 'Restoring...' 
-//                                           : 'Restore your previous purchases',
-//                                       style: Theme.of(context).textTheme.bodySmall,
-//                                     ),
-//                                   ],
-//                                 ),
-//                               ),
-//                               if (_isRestoring)
-//                                 SizedBox(
-//                                   width: 20,
-//                                   height: 20,
-//                                   child: CircularProgressIndicator(
-//                                     strokeWidth: 2,
-//                                     valueColor: AlwaysStoppedAnimation<Color>(
-//                                       appProvider.accentColor,
-//                                     ),
-//                                   ),
-//                                 ),
-//                             ],
-//                           ),
-//                         ),
-//                       ],
-// // SizedBox(height: 25),
+                      // Restore Purchases Button
+                      if (!_isRestored) ...[
+                        const SizedBox(height: 16),
+                        Divider(height: 1, color: appProvider.accentColor),
+                        const SizedBox(height: 16),
+                        InkWell(
+                          onTap: _isRestoring ? null : _restorePurchases,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.restore_rounded,
+                                color: _isRestoring 
+                                    ? Colors.grey 
+                                    : appProvider.accentColor,
+                              ),
+                              const SizedBox(width: 16),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Restore Purchases',
+                                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                        color: _isRestoring ? Colors.grey : null,
+                                      ),
+                                    ),
+                                    Text(
+                                      _isRestoring 
+                                          ? 'Restoring...' 
+                                          : 'Restore your previous purchases',
+                                      style: Theme.of(context).textTheme.bodySmall,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              if (_isRestoring)
+                                SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      appProvider.accentColor,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ],
+// SizedBox(height: 25),
 
-// // Feedback
+// Feedback
                 
                 
                 
-//                     ],
-//                   ),
-//                 ),
+                    ],
+                  ),
+                ),
                 
 
                 //   Text(
@@ -1470,7 +1472,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 channelDescription: 'Notifications for prayer times',
                 importance: Importance.high,
                 priority: Priority.high,
-                sound: RawResourceAndroidNotificationSound('azan'),
+                // sound: RawResourceAndroidNotificationSound('azan'), // Use default sound if azan resource is not available
               ),
               iOS: DarwinNotificationDetails(
                 presentAlert: true,

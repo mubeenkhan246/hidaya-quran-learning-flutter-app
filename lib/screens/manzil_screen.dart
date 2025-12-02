@@ -262,7 +262,7 @@ class _ManzilScreenState extends State<ManzilScreen> with SingleTickerProviderSt
             fontSize: 15,
           ),
           tabs: const [
-            Tab(text: 'Quran'),
+            Tab(text: 'Quran (114)'),
             Tab(text: 'Juz (30)'),
             Tab(text: 'Manzil (7)'),
           ],

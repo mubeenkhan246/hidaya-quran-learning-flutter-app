@@ -81,7 +81,7 @@ class ResponsiveHelper {
   );
   
   EdgeInsets get cardPadding => EdgeInsets.all(
-    responsiveValue(phone: 16, tablet: 20, largeTablet: 24),
+    responsiveValue(phone: 10, tablet: 20, largeTablet: 24),
   );
   
   // Responsive spacing

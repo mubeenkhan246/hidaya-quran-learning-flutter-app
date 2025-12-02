@@ -34,10 +34,17 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  dio: ^5.4.0
   
   # MANDATORY: Quran and Hadith packages
   quran: ^1.4.1
   dorar_hadith: ^0.2.0
+  hadith: ^1.0.1
+  flutter_widget_from_html_core: ^0.17.0
+  esmaulhusna_muslimbg: ^1.0.3
+  # islamic_events: ^0.0.1
+  hijri_date: ^1.0.0
+  hijri_calendar: ^1.0.0
   
   # Prayer times and calendar
   adhan: ^2.0.0
@@ -45,7 +52,10 @@ dependencies:
   geolocator: ^10.1.0
   geocoding: ^2.1.1
   flutter_islamic_icons: ^1.0.2
-  flutter_compass: ^0.8.0
+  flutter_compass: ^0.8.1
+  liquid_glass_renderer: ^0.2.0-dev.4
+  glassmorphism: ^3.0.0
+  google_maps_flutter: ^2.7.0
   
   # Audio playback
   just_audio: ^0.9.36
@@ -71,6 +81,9 @@ dependencies:
   url_launcher: ^6.2.4
   share_plus: ^12.0.1
   translator: ^1.0.0
+  islamic_kit: ^0.1.0
+  muslim_data_flutter: ^1.4.1
+  http: ^1.2.2
   
   # Notifications
   flutter_local_notifications: ^17.2.3
@@ -153,3 +166,6 @@ flutter_launcher_icons:
   # Android specific
   min_sdk_android: 21
   
+dependency_overrides:
+  flutter_compass: ^0.8.1
+

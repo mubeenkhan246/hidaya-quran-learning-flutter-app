@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:i_app/screens/events.dart';
+import 'package:i_app/screens/names_of_allah.dart';
+import 'package:i_app/screens/nearest_masjid_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import '../providers/app_provider.dart';
@@ -34,7 +37,7 @@ class QuickActionsWidget extends StatelessWidget {
       case '/names':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const NamesOfAllahScreen(showBackButton: true)),
+          MaterialPageRoute(builder: (context) => const EsmaulHusnaApp()),
         );
         break;
       case '/dua':
@@ -49,6 +52,12 @@ class QuickActionsWidget extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const TasbihScreen(showBackButton: true)),
         );
         break;
+        case '/events':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const IslamicEventsApp()),
+        );
+        break;
       case '/donation':
         Navigator.push(
           context,
@@ -59,6 +68,12 @@ class QuickActionsWidget extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const ZakatCalculatorScreen(showBackButton: true)),
+        );
+        break;
+      case '/nearest_masjid':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const NearestMasjidScreen()),
         );
         break;
       default:
@@ -75,20 +90,20 @@ class QuickActionsWidget extends StatelessWidget {
 
   // Cache quick actions list to avoid recreating on every build
   static const quickActions = [
+    // {
+    //   'title': 'Read/Listen Quran',
+    //   'icon': FlutterIslamicIcons.solidQuran,
+    //   'color': Color(0xFF10B981),
+    //   'route': '/quran',
+    // },
+    // {
+    //   'title': 'Dua & Azkar',
+    //   'icon': FlutterIslamicIcons.solidPrayer,
+    //   'color': Color(0xFFF59E0B),
+    //   'route': '/dua',
+    // },
     {
-      'title': 'Read/Listen Quran',
-      'icon': FlutterIslamicIcons.solidQuran,
-      'color': Color(0xFF10B981),
-      'route': '/quran',
-    },
-    {
-      'title': 'Dua & Azkar',
-      'icon': FlutterIslamicIcons.solidPrayer,
-      'color': Color(0xFFF59E0B),
-      'route': '/dua',
-    },
-    {
-      'title': '99 Names of Allah',
+      'title': 'Names of Allah',
       'icon': FlutterIslamicIcons.allah,
       'color': Color(0xFFFF6B6B),
       'route': '/names',
@@ -106,10 +121,22 @@ class QuickActionsWidget extends StatelessWidget {
       'route': '/tasbih',
     },
     {
+      'title': 'Events',
+      'icon': FlutterIslamicIcons.calendar,
+      'color': Color.fromARGB(255, 104, 162, 161),
+      'route': '/events',
+    },
+    {
       'title': 'Zakat Calculator',
       'icon': FlutterIslamicIcons.solidZakat,
       'color': Color(0xFF14B8A6),
       'route': '/zakat',
+    },
+    {
+      'title': 'Nearest Masjid',
+      'icon': FlutterIslamicIcons.solidMosque,
+      'color': Color(0xFF22C55E),
+      'route': '/nearest_masjid',
     },
   ];
 
@@ -153,7 +180,7 @@ class QuickActionsWidget extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: responsive.quickActionsColumns,
-                      childAspectRatio: responsive.isTabletOrLarger ? 1.0 : 0.9,
+                      childAspectRatio: responsive.isTabletOrLarger ? 1.0 : 1.0,
                       crossAxisSpacing: responsive.smallSpacing,
                       mainAxisSpacing: responsive.smallSpacing,
                     ),
@@ -219,17 +246,17 @@ class QuickActionsWidget extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: color.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-              ),
+              // decoration: BoxDecoration(
+              //   color: color.withOpacity(0.2),
+              //   borderRadius: BorderRadius.circular(12),
+              // ),
               child: Icon(
                 icon,
                 color: color,
-                size: 24,
+                size: 34,
               ),
             ),
-            const SizedBox(height: 8),
+            // const SizedBox(height: 8),
             Text(
               title,
               textAlign: TextAlign.center,

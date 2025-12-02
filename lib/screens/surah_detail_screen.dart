@@ -952,16 +952,17 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          scrolledUnderElevation: 0,
           title: Column(
             children: [
               Text(surahName),
-              Text(
-                surahNameArabic,
-                style: AppTheme.arabicTextStyle(
-                  fontSize: appProvider.arabicTextSize * 0.7,
-                  color: isDark ? AppTheme.textLight : AppTheme.textDark,
-                ),
-              ),
+              // Text(
+              //   surahNameArabic,
+              //   style: AppTheme.arabicTextStyle(
+              //     fontSize: appProvider.arabicTextSize * 0.7,
+              //     color: isDark ? AppTheme.textLight : AppTheme.textDark,
+              //   ),
+              // ),
             ],
           ),
           centerTitle: true,
@@ -1261,146 +1262,146 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
               ),
 
 
-              if (widget.surahNumber == 1)
+              // if (widget.surahNumber == 1)
               
                   
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: GlassCard(
-                    margin: const EdgeInsets.only(bottom: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        // Auzu label
-                        Row(
-                          children: [
-                            Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    appProvider.accentColor,
-                                    appProvider.accentColor.withOpacity(0.7),
-                                  ],
-                                ),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Icon(
-                                Icons.auto_awesome_rounded,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                            ),
-                            const SizedBox(width: 12),
-                            Text(
-                              '',
-                              style: TextStyle(
-                                color: appProvider.accentColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
+              //   Padding(
+              //     padding: const EdgeInsets.symmetric(horizontal: 24),
+              //     child: GlassCard(
+              //       margin: const EdgeInsets.only(bottom: 16),
+              //       child: Column(
+              //         crossAxisAlignment: CrossAxisAlignment.stretch,
+              //         children: [
+              //           // Auzu label
+              //           Row(
+              //             children: [
+              //               Container(
+              //                 width: 40,
+              //                 height: 40,
+              //                 decoration: BoxDecoration(
+              //                   gradient: LinearGradient(
+              //                     colors: [
+              //                       appProvider.accentColor,
+              //                       appProvider.accentColor.withOpacity(0.7),
+              //                     ],
+              //                   ),
+              //                   borderRadius: BorderRadius.circular(12),
+              //                 ),
+              //                 child: Icon(
+              //                   Icons.auto_awesome_rounded,
+              //                   color: Colors.white,
+              //                   size: 20,
+              //                 ),
+              //               ),
+              //               const SizedBox(width: 12),
+              //               Text(
+              //                 '',
+              //                 style: TextStyle(
+              //                   color: appProvider.accentColor,
+              //                   fontWeight: FontWeight.bold,
+              //                   fontSize: 16,
+              //                 ),
+              //               ),
 
-                            const Spacer(),
+              //               const Spacer(),
                             
-                            // Play audio button
-                            // if (_isLoading && _currentlyPlayingVerse == 1)
-                            //    SizedBox(
-                            //     width: 24,
-                            //     height: 24,
-                            //     child: CircularProgressIndicator(
-                            //       strokeWidth: 2,
-                            //       valueColor: AlwaysStoppedAnimation<Color>(appProvider.accentColor),
-                            //     ),
-                            //   )
-                            // else
-                            //   IconButton(
-                            //     icon: Icon(
-                            //       _audioPlayer.playing
-                            //           ? Icons.pause_rounded
-                            //           : Icons.play_arrow_rounded,
-                            //       color: appProvider.accentColor,
-                            //     ),
-                            //     onPressed: () => _playVerseAudio(1),
-                            //     // tooltip: _audioPlayer.playing  'Play',
-                            //   ),
+              //               // Play audio button
+              //               // if (_isLoading && _currentlyPlayingVerse == 1)
+              //               //    SizedBox(
+              //               //     width: 24,
+              //               //     height: 24,
+              //               //     child: CircularProgressIndicator(
+              //               //       strokeWidth: 2,
+              //               //       valueColor: AlwaysStoppedAnimation<Color>(appProvider.accentColor),
+              //               //     ),
+              //               //   )
+              //               // else
+              //               //   IconButton(
+              //               //     icon: Icon(
+              //               //       _audioPlayer.playing
+              //               //           ? Icons.pause_rounded
+              //               //           : Icons.play_arrow_rounded,
+              //               //       color: appProvider.accentColor,
+              //               //     ),
+              //               //     onPressed: () => _playVerseAudio(1),
+              //               //     // tooltip: _audioPlayer.playing  'Play',
+              //               //   ),
                             
                            
                             
-                            // More options
-                            PopupMenuButton<String>(
-                              icon:  Icon(
-                                Icons.more_vert_rounded,
-                                color: appProvider.accentColor,
-                              ),
-                              onSelected: (value) {
-                                switch (value) {
-                                  case 'copy':
-                                    _copyVerse(1, 'أعوذُ بِٱللَّهِ مِنَ ٱلشَّيۡطَٰنِ ٱلرَّجِيمِ');
-                                    break;
-                                  case 'share':
-                                    _shareVerse(1, 'أعوذُ بِٱللَّهِ مِنَ ٱلشَّيۡطَٰنِ ٱلرَّجِيمِ');
-                                    break;
-                                }
-                              },
-                              itemBuilder: (context) => [
-                                const PopupMenuItem(
-                                  value: 'copy',
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.copy_rounded),
-                                      SizedBox(width: 12),
-                                      Text('Copy'),
-                                    ],
-                                  ),
-                                ),
-                                const PopupMenuItem(
-                                  value: 'share',
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.share_rounded),
-                                      SizedBox(width: 12),
-                                      Text('Share'),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 16),
-                        SelectableText(
-                          'أعوذُ بِٱللَّهِ مِنَ ٱلشَّيۡطَٰنِ ٱلرَّجِيمِ',
-                          style: AppTheme.arabicTextStyle(
-                            fontSize: appProvider.arabicTextSize,
-                            color: isDark ? AppTheme.textLight : AppTheme.textDark,
-                          ),
-                          textAlign: TextAlign.right,
-                        ),
-                        if (_showTranslation) ...[
-                          const SizedBox(height: 16),
-                          Divider(
-                            color: isDark 
-                                ? AppTheme.textLight.withOpacity(0.2)
-                                : AppTheme.textDark.withOpacity(0.2),
-                          ),
-                          const SizedBox(height: 12),
-                          SelectableText(
-                            'I seek refuge in Allah from the accursed Shaytan (Satan).',
-                            textDirection: TranslationHelper.isRTLLanguage(appProvider.selectedTranslation)
-                                ? TextDirection.rtl
-                                : TextDirection.ltr,
-                            textAlign: TranslationHelper.isRTLLanguage(appProvider.selectedTranslation)
-                                ? TextAlign.right
-                                : TextAlign.left,
-                            style: Theme.of(context).textTheme.bodyLarge,
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                ),
+              //               // More options
+              //               PopupMenuButton<String>(
+              //                 icon:  Icon(
+              //                   Icons.more_vert_rounded,
+              //                   color: appProvider.accentColor,
+              //                 ),
+              //                 onSelected: (value) {
+              //                   switch (value) {
+              //                     case 'copy':
+              //                       _copyVerse(1, 'أعوذُ بِٱللَّهِ مِنَ ٱلشَّيۡطَٰنِ ٱلرَّجِيمِ');
+              //                       break;
+              //                     case 'share':
+              //                       _shareVerse(1, 'أعوذُ بِٱللَّهِ مِنَ ٱلشَّيۡطَٰنِ ٱلرَّجِيمِ');
+              //                       break;
+              //                   }
+              //                 },
+              //                 itemBuilder: (context) => [
+              //                   const PopupMenuItem(
+              //                     value: 'copy',
+              //                     child: Row(
+              //                       children: [
+              //                         Icon(Icons.copy_rounded),
+              //                         SizedBox(width: 12),
+              //                         Text('Copy'),
+              //                       ],
+              //                     ),
+              //                   ),
+              //                   const PopupMenuItem(
+              //                     value: 'share',
+              //                     child: Row(
+              //                       children: [
+              //                         Icon(Icons.share_rounded),
+              //                         SizedBox(width: 12),
+              //                         Text('Share'),
+              //                       ],
+              //                     ),
+              //                   ),
+              //                 ],
+              //               ),
+              //             ],
+              //           ),
+              //           const SizedBox(height: 16),
+              //           SelectableText(
+              //             'أعوذُ بِٱللَّهِ مِنَ ٱلشَّيۡطَٰنِ ٱلرَّجِيمِ',
+              //             style: AppTheme.arabicTextStyle(
+              //               fontSize: appProvider.arabicTextSize,
+              //               color: isDark ? AppTheme.textLight : AppTheme.textDark,
+              //             ),
+              //             textAlign: TextAlign.right,
+              //           ),
+              //           if (_showTranslation) ...[
+              //             const SizedBox(height: 16),
+              //             Divider(
+              //               color: isDark 
+              //                   ? AppTheme.textLight.withOpacity(0.2)
+              //                   : AppTheme.textDark.withOpacity(0.2),
+              //             ),
+              //             const SizedBox(height: 12),
+              //             SelectableText(
+              //               'I seek refuge in Allah from the accursed Shaytan (Satan).',
+              //               textDirection: TranslationHelper.isRTLLanguage(appProvider.selectedTranslation)
+              //                   ? TextDirection.rtl
+              //                   : TextDirection.ltr,
+              //               textAlign: TranslationHelper.isRTLLanguage(appProvider.selectedTranslation)
+              //                   ? TextAlign.right
+              //                   : TextAlign.left,
+              //               style: Theme.of(context).textTheme.bodyLarge,
+              //             ),
+              //           ],
+              //         ],
+              //       ),
+              //     ),
+              //   ),
               
               // Basmala (except for Surah 1 and Surah 9) - Verse-like UI
               // Surah 1's first verse IS the Bismillah, Surah 9 has no Bismillah

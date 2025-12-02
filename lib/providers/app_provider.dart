@@ -18,6 +18,8 @@ class AppProvider with ChangeNotifier {
   double _arabicTextSize = 24.0; // Default to Medium
   double _baseFontSize = 16.0; // Default base font size (16px-30px range)
   double _translationFontSize = 16.0; // Default translation/English text size (12px-24px range)
+  String _hadithLanguage = 'en';
+  String _quranDisplayMode = 'both';
   
   // Reading Reminder
   bool _reminderEnabled = false;
@@ -37,6 +39,7 @@ class AppProvider with ChangeNotifier {
   String get themeColor => _themeColor;
   bool get isFirstLaunch => _isFirstLaunch;
   bool get isDarkMode => _themeMode == AppTheme.themeDark;
+  String get hadithLanguage => _hadithLanguage;
   UserProgress? get userProgress => _userProgress;
   double get arabicTextSize => _arabicTextSize;
   double get baseFontSize => _baseFontSize;
@@ -44,12 +47,20 @@ class AppProvider with ChangeNotifier {
   bool get reminderEnabled => _reminderEnabled;
   int get reminderHour => _reminderHour;
   int get reminderMinute => _reminderMinute;
+  String get quranDisplayMode => _quranDisplayMode;
   
   String get reminderTimeFormatted {
     final hour12 = _reminderHour > 12 ? _reminderHour - 12 : (_reminderHour == 0 ? 12 : _reminderHour);
     final period = _reminderHour >= 12 ? 'PM' : 'AM';
     final minute = _reminderMinute.toString().padLeft(2, '0');
     return '$hour12:$minute $period';
+  }
+
+  Future<void> setHadithLanguage(String code) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(AppConstants.keyHadithLanguage, code);
+    _hadithLanguage = code;
+    notifyListeners();
   }
   
   // Get current accent color
@@ -79,6 +90,8 @@ class AppProvider with ChangeNotifier {
     _arabicTextSize = prefs.getDouble(AppConstants.keyArabicTextSize) ?? 24.0; // Default to Medium
     _baseFontSize = prefs.getDouble(AppConstants.keyBaseFontSize) ?? 16.0; // Default base font size
     _translationFontSize = prefs.getDouble(AppConstants.keyTranslationFontSize) ?? 16.0; // Default translation font size
+    _hadithLanguage = prefs.getString(AppConstants.keyHadithLanguage) ?? 'en';
+    _quranDisplayMode = prefs.getString(AppConstants.keyQuranDisplayMode) ?? 'both';
     
     // Load reminder settings
     _reminderEnabled = prefs.getBool('reminderEnabled') ?? false;
@@ -212,6 +225,14 @@ class AppProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setDouble(AppConstants.keyTranslationFontSize, size);
     _translationFontSize = size;
+    notifyListeners();
+  }
+
+  // Set Quran display mode ("arabic", "translation", "both")
+  Future<void> setQuranDisplayMode(String mode) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(AppConstants.keyQuranDisplayMode, mode);
+    _quranDisplayMode = mode;
     notifyListeners();
   }
   

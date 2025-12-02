@@ -384,6 +384,457 @@ class _FullSurahPlayerScreenState extends State<FullSurahPlayerScreen> {
     super.dispose();
   }
 
+
+  void _showFontSizeControl(BuildContext context) {
+    final appProvider = context.read<AppProvider>();
+    final isDark = appProvider.isDarkMode;
+    
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        child: Container(
+          constraints: const BoxConstraints(maxWidth: 400),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                isDark ? AppTheme.primaryDark : Colors.white,
+                isDark ? AppTheme.secondaryDeep : const Color(0xFFF5F5F5),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(
+              color: appProvider.accentColor.withOpacity(0.3),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: appProvider.accentColor.withOpacity(0.2),
+                blurRadius: 30,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Header
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        appProvider.accentColor.withOpacity(0.1),
+                        appProvider.accentColor.withOpacity(0.05),
+                      ],
+                    ),
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(24),
+                      topRight: Radius.circular(24),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.text_fields_rounded,
+                        size: 48,
+                        color: appProvider.accentColor,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        'Text Size',
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: appProvider.accentColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                
+                // Content
+                StatefulBuilder(
+                  builder: (context, setState) {
+                    return Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Arabic Text Size
+                          Text(
+                            'Arabic Text Size',
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Row(
+                            children: [
+                              Text(
+                                'A',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: appProvider.accentColor,
+                                ),
+                              ),
+                              Expanded(
+                                child: Slider(
+                                  value: appProvider.arabicTextSize,
+                                  min: 16.0,
+                                  max: 40.0,
+                                  divisions: 24,
+                                  activeColor: appProvider.accentColor,
+                                  inactiveColor: appProvider.accentColor.withOpacity(0.3),
+                                  onChanged: (value) {
+                                    appProvider.setArabicTextSize(value);
+                                    setState(() {});
+                                  },
+                                ),
+                              ),
+                              Text(
+                                'A',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: appProvider.accentColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Center(
+                            child: Text(
+                              '${appProvider.arabicTextSize.toInt()}px',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: appProvider.accentColor,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 24),
+                          
+                          // Translation Text Size
+                          Text(
+                            'Translation Text Size',
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Row(
+                            children: [
+                              Text(
+                                'A',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: appProvider.accentColor,
+                                ),
+                              ),
+                              Expanded(
+                                child: Slider(
+                                  value: appProvider.translationFontSize,
+                                  min: 12.0,
+                                  max: 24.0,
+                                  divisions: 12,
+                                  activeColor: appProvider.accentColor,
+                                  inactiveColor: appProvider.accentColor.withOpacity(0.3),
+                                  onChanged: (value) {
+                                    appProvider.setTranslationFontSize(value);
+                                    setState(() {});
+                                  },
+                                ),
+                              ),
+                              Text(
+                                'A',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: appProvider.accentColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Center(
+                            child: Text(
+                              '${appProvider.translationFontSize.toInt()}px',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: appProvider.accentColor,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 24),
+                          
+                          // Close button
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: () => Navigator.pop(context),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: appProvider.accentColor,
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                elevation: 0,
+                              ),
+                              child: const Text(
+                                'Done',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+  
+  void _showSurahInfo(BuildContext context) {
+    final appProvider = context.read<AppProvider>();
+    final isDark = appProvider.isDarkMode;
+    final surahName = quran.getSurahName(widget.surahNumber);
+    final surahNameArabic = quran.getSurahNameArabic(widget.surahNumber);
+    final totalVerses = quran.getVerseCount(widget.surahNumber);
+    final placeOfRevelation = quran.getPlaceOfRevelation(widget.surahNumber);
+    final revelationType = placeOfRevelation == 'Makkah' ? 'Makki' : 'Madani';
+    
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        child: Container(
+          constraints: const BoxConstraints(maxWidth: 400),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                isDark ? AppTheme.primaryDark : Colors.white,
+                isDark ? AppTheme.secondaryDeep : const Color(0xFFF5F5F5),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(
+              color: appProvider.accentColor.withOpacity(0.3),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: appProvider.accentColor.withOpacity(0.2),
+                blurRadius: 30,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Header
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      appProvider.accentColor.withOpacity(0.1),
+                      appProvider.accentColor.withOpacity(0.05),
+                    ],
+                  ),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    topRight: Radius.circular(24),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.menu_book_rounded,
+                      size: 48,
+                      color: appProvider.accentColor,
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      surahNameArabic,
+                      style: AppTheme.arabicTextStyle(
+                        fontSize: appProvider.arabicTextSize * 1.3,
+                        fontWeight: FontWeight.bold,
+                        color: appProvider.accentColor,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      surahName,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: appProvider.accentColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              
+              // Content
+              Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  children: [
+                    // Surah number
+                    _buildInfoRow(
+                      context,
+                      Icons.numbers_rounded,
+                      'Surah Number',
+                      widget.surahNumber.toString(),
+                      appProvider,
+                    ),
+                    const SizedBox(height: 16),
+                    
+                    // Total verses
+                    _buildInfoRow(
+                      context,
+                      Icons.format_list_numbered_rounded,
+                      'Total Verses',
+                      totalVerses.toString(),
+                      appProvider,
+                    ),
+                    const SizedBox(height: 16),
+                    
+                    // Place of revelation
+                    _buildInfoRow(
+                      context,
+                      Icons.place_rounded,
+                      'Revelation',
+                      '$placeOfRevelation ($revelationType)',
+                      appProvider,
+                    ),
+                    const SizedBox(height: 16),
+                    
+                    // Juz/Para info
+                    _buildInfoRow(
+                      context,
+                      Icons.bookmark_rounded,
+                      'Location',
+                      'Juz ${quran.getJuzNumber(widget.surahNumber, 1)}',
+                      appProvider,
+                    ),
+                    
+                    const SizedBox(height: 24),
+                    
+                    // Close button
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pop(context),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: appProvider.accentColor,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          elevation: 0,
+                        ),
+                        child: const Text(
+                          'Close',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+
+
+  Widget _buildInfoRow(
+    BuildContext context,
+    IconData icon,
+    String label,
+    String value,
+    AppProvider appProvider,
+  ) {
+    final isDark = appProvider.isDarkMode;
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isDark
+            ? Colors.white.withOpacity(0.05)
+            : Colors.black.withOpacity(0.03),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: appProvider.accentColor.withOpacity(0.1),
+          width: 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: appProvider.accentColor.withOpacity(0.1),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              icon,
+              size: 20,
+              color: appProvider.accentColor,
+            ),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  label,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: isDark
+                        ? AppTheme.textLight.withOpacity(0.7)
+                        : AppTheme.textDark.withOpacity(0.7),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  value,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? AppTheme.textLight : AppTheme.textDark,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     final appProvider = context.watch<AppProvider>();
@@ -400,6 +851,7 @@ class _FullSurahPlayerScreenState extends State<FullSurahPlayerScreen> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          scrolledUnderElevation: 0,
           title: Column(
             children: [
               Text(surahName),
@@ -412,19 +864,73 @@ class _FullSurahPlayerScreenState extends State<FullSurahPlayerScreen> {
             ],
           ),
           centerTitle: true,
+          actions: [
+            if(widget.playMode == SurahPlayMode.verseByVerse) PopupMenuButton<String>(
+              icon: const Icon(Icons.visibility_rounded),
+              tooltip: 'Display Options',
+              initialValue: appProvider.quranDisplayMode,
+              onSelected: (value) {
+                appProvider.setQuranDisplayMode(value);
+              },
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  value: 'arabic',
+                  child: Row(
+                    children: const [
+                      Icon(Icons.text_fields_rounded),
+                      SizedBox(width: 8),
+                      Text('Arabic Only'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  value: 'translation',
+                  child: Row(
+                    children: const [
+                      Icon(Icons.translate_rounded),
+                      SizedBox(width: 8),
+                      Text('Translation Only'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  value: 'both',
+                  child: Row(
+                    children: const [
+                      Icon(Icons.view_agenda_rounded),
+                      SizedBox(width: 8),
+                      Text('Arabic + Translation'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            // Font size control
+            IconButton(
+              icon: const Icon(Icons.text_fields_rounded),
+              tooltip: 'Text Size',
+              onPressed: () => _showFontSizeControl(context),
+            ),
+            // Surah info button
+            IconButton(
+              icon: const Icon(Icons.info_outline_rounded),
+              tooltip: 'Surah Info',
+              onPressed: () => _showSurahInfo(context),
+            ),
+          ],
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Surah info card
-                GlassCard(
-                  child: Container(
-                    width: double.infinity,
-                    child: Column(
-                      children: [
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Surah info card
+              widget.playMode == SurahPlayMode.verseByVerse ? Container() : SizedBox(height: 50),
+              widget.playMode == SurahPlayMode.verseByVerse ? Container() : GlassCard(
+                child: Container(
+                  width: double.infinity,
+                  child: Column(
+                    children: [
                         // Album art style circle
                         Container(
                           width: 200,
@@ -504,16 +1010,16 @@ class _FullSurahPlayerScreenState extends State<FullSurahPlayerScreen> {
                   ),
                 ),
 
-                const SizedBox(height: 24),
+              const SizedBox(height: 24),
 
-                // Current verse display
-                GlassCard(
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
+              // Current verse display
+              widget.playMode != SurahPlayMode.verseByVerse ? Container() : GlassCard(
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
                         // Verse number indicator
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -542,44 +1048,60 @@ class _FullSurahPlayerScreenState extends State<FullSurahPlayerScreen> {
                         ),
                         
                         if (widget.playMode == SurahPlayMode.verseByVerse) ...[
-                          const SizedBox(height: 20),
-                          
-                          // Arabic verse text
-                          Text(
-                            quran.getVerse(widget.surahNumber, _currentVerse, verseEndSymbol: true),
-                            style: AppTheme.arabicTextStyle(
-                              fontSize: appProvider.arabicTextSize,
-                              color: isDark ? AppTheme.textLight : AppTheme.textDark,
-                              height: 1.9,
+                        const SizedBox(height: 20),
+                          if (appProvider.quranDisplayMode == 'arabic' || appProvider.quranDisplayMode == 'both') ...[
+                            // Arabic verse text
+                            Text(
+                              quran.getVerse(widget.surahNumber, _currentVerse, verseEndSymbol: true),
+                              style: AppTheme.arabicTextStyle(
+                                fontSize: appProvider.arabicTextSize,
+                                color: isDark ? AppTheme.textLight : AppTheme.textDark,
+                                height: 1.9,
+                              ),
+                              textAlign: TextAlign.right,
+                              textDirection: TextDirection.rtl,
                             ),
-                            textAlign: TextAlign.right,
-                            textDirection: TextDirection.rtl,
-                          ),
-                          
-                          const SizedBox(height: 16),
-                          
-                          // Translation
-                          Text(
-                            TranslationHelper.getTranslation(
-                              widget.surahNumber,
-                              _currentVerse,
-                              appProvider.selectedTranslation,
+                          ],
+                          if (appProvider.quranDisplayMode == 'both')
+                            const SizedBox(height: 16),
+                          if (appProvider.quranDisplayMode == 'translation' || appProvider.quranDisplayMode == 'both') ...[
+                            // Translation
+                            Text(
+                              TranslationHelper.getTranslation(
+                                widget.surahNumber,
+                                _currentVerse,
+                                appProvider.selectedTranslation,
+                              ),
+                              textDirection: TranslationHelper.isRTLLanguage(appProvider.selectedTranslation)
+                  ? TextDirection.rtl
+                  : TextDirection.ltr,
+              textAlign: TranslationHelper.isRTLLanguage(appProvider.selectedTranslation)
+                  ? TextAlign.right
+                  : TextAlign.left,
+                              style: TextStyle(
+                                fontSize: appProvider.translationFontSize,
+                                color: isDark ? AppTheme.textLight : AppTheme.textDark,
+                                height: 1.6,
+                              ),
                             ),
-                            style: TextStyle(
-                              fontSize: appProvider.translationFontSize,
-                              color: isDark ? AppTheme.textLight : AppTheme.textDark,
-                              height: 1.6,
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
+                          ],
                         ],
                       ],
                     ),
                   ),
                 ),
 
-                const SizedBox(height: 24),
-
+              const SizedBox(height: 24),
+            ],
+          ),
+        ),
+        bottomNavigationBar: SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
                 // Progress bar
                 GlassCard(
                   child: Column(
@@ -615,95 +1137,89 @@ class _FullSurahPlayerScreenState extends State<FullSurahPlayerScreen> {
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 32),
-
-                // Playback controls
-                GlassCard(
-                  padding: const EdgeInsets.symmetric(vertical: 24),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      // Previous verse / Rewind
-                      IconButton(
-                        icon: Icon(
-                          widget.playMode == SurahPlayMode.verseByVerse
-                              ? Icons.skip_previous_rounded
-                              : Icons.replay_10_rounded,
-                        ),
-                        iconSize: 40,
-                        color: widget.playMode == SurahPlayMode.verseByVerse && _currentVerse <= 1
-                            ? appProvider.accentColor.withOpacity(0.3)
-                            : appProvider.accentColor,
-                        onPressed: widget.playMode == SurahPlayMode.verseByVerse
-                            ? (_currentVerse > 1 ? _playPreviousVerse : null)
-                            : _seekBackward,
-                        tooltip: widget.playMode == SurahPlayMode.verseByVerse
-                            ? 'Previous Verse'
-                            : 'Rewind 10 seconds',
-                      ),
-
-                      // Play/Pause
-                      Container(
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: appProvider.accentColor,
-                          boxShadow: [
-                            BoxShadow(
-                              color: appProvider.accentColor.withOpacity(0.4),
-                              blurRadius: 20,
-                              spreadRadius: 2,
+                    
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          // Previous verse / Rewind
+                          IconButton(
+                            icon: Icon(
+                              widget.playMode == SurahPlayMode.verseByVerse
+                                  ? Icons.skip_previous_rounded
+                                  : Icons.replay_10_rounded,
                             ),
-                          ],
-                        ),
-                        child: _isLoading
-                            ? const Padding(
-                                padding: EdgeInsets.all(20),
-                                child: CircularProgressIndicator(
-                                  color: Colors.white,
-                                  strokeWidth: 3,
+                            iconSize: 40,
+                            color: widget.playMode == SurahPlayMode.verseByVerse && _currentVerse <= 1
+                                ? appProvider.accentColor.withOpacity(0.3)
+                                : appProvider.accentColor,
+                            onPressed: widget.playMode == SurahPlayMode.verseByVerse
+                                ? (_currentVerse > 1 ? _playPreviousVerse : null)
+                                : _seekBackward,
+                            tooltip: widget.playMode == SurahPlayMode.verseByVerse
+                                ? 'Previous Verse'
+                                : 'Rewind 10 seconds',
+                          ),
+                      
+                          // Play/Pause
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: appProvider.accentColor,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: appProvider.accentColor.withOpacity(0.4),
+                                  blurRadius: 20,
+                                  spreadRadius: 2,
                                 ),
-                              )
-                            : IconButton(
-                                icon: Icon(
-                                  _isPlaying
-                                      ? Icons.pause_rounded
-                                      : Icons.play_arrow_rounded,
-                                ),
-                                iconSize: 48,
-                                color: Colors.white,
-                                onPressed: _togglePlayPause,
-                              ),
-                      ),
-
-                      // Next verse / Forward
-                      IconButton(
-                        icon: Icon(
-                          widget.playMode == SurahPlayMode.verseByVerse
-                              ? Icons.skip_next_rounded
-                              : Icons.forward_10_rounded,
-                        ),
-                        iconSize: 40,
-                        color: widget.playMode == SurahPlayMode.verseByVerse && _currentVerse >= _totalVerses
-                            ? appProvider.accentColor.withOpacity(0.3)
-                            : appProvider.accentColor,
-                        onPressed: widget.playMode == SurahPlayMode.verseByVerse
-                            ? (_currentVerse < _totalVerses ? _playNextVerse : null)
-                            : _seekForward,
-                        tooltip: widget.playMode == SurahPlayMode.verseByVerse
-                            ? 'Next Verse'
-                            : 'Forward 10 seconds',
+                              ],
+                            ),
+                            child: _isLoading
+                                ? const Padding(
+                                    padding: EdgeInsets.all(20),
+                                    child: CircularProgressIndicator(
+                                      color: Colors.white,
+                                      strokeWidth: 3,
+                                    ),
+                                  )
+                                : IconButton(
+                                    icon: Icon(
+                                      _isPlaying
+                                          ? Icons.pause_rounded
+                                          : Icons.play_arrow_rounded,
+                                    ),
+                                    iconSize: 48,
+                                    color: Colors.white,
+                                    onPressed: _togglePlayPause,
+                                  ),
+                          ),
+                      
+                          // Next verse / Forward
+                          IconButton(
+                            icon: Icon(
+                              widget.playMode == SurahPlayMode.verseByVerse
+                                  ? Icons.skip_next_rounded
+                                  : Icons.forward_10_rounded,
+                            ),
+                            iconSize: 40,
+                            color: widget.playMode == SurahPlayMode.verseByVerse && _currentVerse >= _totalVerses
+                                ? appProvider.accentColor.withOpacity(0.3)
+                                : appProvider.accentColor,
+                            onPressed: widget.playMode == SurahPlayMode.verseByVerse
+                                ? (_currentVerse < _totalVerses ? _playNextVerse : null)
+                                : _seekForward,
+                            tooltip: widget.playMode == SurahPlayMode.verseByVerse
+                                ? 'Next Verse'
+                                : 'Forward 10 seconds',
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
 
-                const SizedBox(height: 24),
+                const SizedBox(height: 8),
 
                 // Status text
                 if (_isLoading)

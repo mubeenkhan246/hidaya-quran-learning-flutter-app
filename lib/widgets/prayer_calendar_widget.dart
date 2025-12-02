@@ -427,7 +427,7 @@ class _PrayerCalendarWidgetState extends State<PrayerCalendarWidget> {
                 channelDescription: 'Notifications for prayer times',
                 importance: Importance.high,
                 priority: Priority.high,
-                sound: RawResourceAndroidNotificationSound('azan'),
+                // sound: RawResourceAndroidNotificationSound('azan'), // Use default sound if azan resource is not available
               ),
               iOS: DarwinNotificationDetails(
                 presentAlert: true,
